@@ -18,7 +18,6 @@ def extract_text_from_pdf(file_stream) -> str:
 
 def extract_text_from_docx(file_stream) -> str:
     try:
-        # file_stream is a BytesIO-like object
         doc = Document(file_stream)
         return "\n".join([para.text for para in doc.paragraphs])
     except Exception:
@@ -36,7 +35,6 @@ def extract_text(uploaded_file) -> str:
     elif name and name.lower().endswith(".docx"):
         return extract_text_from_docx(uploaded_file)
     else:
-        # fallback: try reading decoded text
         try:
             uploaded_file.seek(0)
             raw = uploaded_file.read()
