@@ -42,3 +42,4 @@ else:
 
 st.markdown("---")
 st.markdown("**Notes:**\n- To enable AI suggestions set environment variable `OPENAI_API_KEY`.\n- This is a beginner-friendly starting point; consider adding better NLP models, an ATS keyword matcher, and resume rewriting features.")
+#streamlit run app.py to run the app
